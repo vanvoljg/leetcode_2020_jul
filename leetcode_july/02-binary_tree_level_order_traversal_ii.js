@@ -1,8 +1,5 @@
 'use strict';
 
-import {Tree} from './lib/tree.js';
-import {Queue} from './lib/deque.js';
-
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -15,6 +12,19 @@ import {Queue} from './lib/deque.js';
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrderBottom = function(root) {
-  
+const levelOrderBottom = (root) => {
+  let ret = [];
+  if (root === null) return ret;
+  let q = new Queue();
+  q.push([root, 0]);
+  while (q.peek() !== undefined) {
+    const [cur, depth] = q.shift();
+    if (cur !== null) {
+      q.push([cur.left, depth + 1]);
+      q.push([cur.right, depth + 1]);
+      if (!ret[depth]) ret[depth] = [];
+      ret[depth].push(cur.val);
+    }
+  }
+  return ret.reverse();
 };
