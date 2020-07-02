@@ -1,5 +1,8 @@
 'use strict';
 
+import {Tree} from './lib/tree.js';
+import {Queue} from './lib/deque.js';
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
