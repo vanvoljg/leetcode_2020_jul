@@ -10,9 +10,9 @@ export class Queue {
   constructor() {
     this.front = null;
     this.back = this.front;
-    this.length = 1;
+    this.length = 0;
   }
-  
+
   // Add to back
   push(val) {
     const node = new QueueNode(val);
@@ -40,7 +40,7 @@ export class Queue {
     }
     this.length++;
   }
-  
+
   // Remove from front
   shift() {
     if (this.front) {
@@ -66,7 +66,7 @@ export class Queue {
       return undefined;
     }
   }
-  
+
   // Return front value
   peek() {
     return this.front !== null ? this.front.val : undefined;
@@ -76,7 +76,4 @@ export class Queue {
   peekTail() {
     return this.back !== null ? this.back.val : undefined;
   }
-
-
-
 }
