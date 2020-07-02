@@ -50,7 +50,7 @@ export class Queue {
       this.length--;
       return node.val;
     } else {
-      return null;
+      return undefined;
     }
   }
 
@@ -63,18 +63,18 @@ export class Queue {
       this.length--;
       return node.val;
     } else {
-      return null;
+      return undefined;
     }
   }
   
   // Return front value
   peek() {
-    return this.front !== null ? this.front.val : null;
+    return this.front !== null ? this.front.val : undefined;
   }
 
   // Return back value
   peekTail() {
-    return this.back !== null ? this.back.val : null;
+    return this.back !== null ? this.back.val : undefined;
   }
 
 

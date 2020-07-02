@@ -1,6 +1,6 @@
 'use strict';
 
-import { Deque as Queue } from './deque.js';
+import {Queue} from './deque.js';
 
 export class TreeNode {
   constructor(val, left, right) {
@@ -11,15 +11,9 @@ export class TreeNode {
 }
 
 export class Tree {
-  constructor(array) {
-    if (array instanceof Array && array.length > 0) {
-      this.root = new TreeNode(array[0]);
-      for (let i = 1; i < array.length; i++) {
-        this.addNode(array[i]);
-      }
-    } else {
-      this.root = null;
-    }
+  constructor(val) {
+    if (val !== undefined) this.root = new TreeNode(val);
+    else this.root = null;
   }
 
   addNode(val) {
